@@ -1,0 +1,64 @@
+- name: Deploy client application on Kubernetes
+  hosts: all
+  gather_facts: false
+  become: yes
+  tasks:
+    - name: Create deployment
+      k8s:
+        kubeconfig: "~/.kube/config"
+        state: present
+        definition:
+          apiVersion: apps/v1
+          kind: Deployment
+          metadata:
+            name: agms-client
+            namespace: agms
+            labels:
+              app: agms-client
+          spec:
+            replicas: 1
+            selector:
+              matchLabels:
+                app: agms-client
+            template:
+              metadata:
+                labels:
+                  app: agms-client
+              spec:
+                containers:
+                  - name: agms-client
+                    image: taharejeb97/agms-client:v1.0.20-dev
+                    ports:
+                      - containerPort: 5671
+                    resources:
+                      requests:
+                        memory: "256Mi"  # Request 256 MB of memory
+                        cpu: "200m"      # Request 200 milliCPU
+                      limits:
+                        memory: "1.5Gi"  # Limit to 512 MB of memory
+                        cpu: "800m"      # Limit to 400 milliCPU
+                nodeSelector:
+                  kubernetes.io/hostname: worker1      
+
+    - name: Create service
+      k8s:
+        state: present
+        kubeconfig: "~/.kube/config"
+        verify_ssl: no
+        definition:
+          apiVersion: v1
+          kind: Service
+          metadata:
+            name: agms-client
+            namespace: agms
+            labels:
+              app: agms-client
+          spec:
+            selector:
+              app: agms-client
+            ports:
+              - protocol: TCP
+                port: 5671
+                targetPort: 5671
+                nodePort: 31345
+            type: NodePort

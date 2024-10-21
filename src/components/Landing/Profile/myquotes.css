@@ -1,0 +1,55 @@
+/* Cache les icônes par défaut */
+
+/* Affiche les icônes lors du survol de la carte */
+.card .icons-display {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    transition: 3s;
+    cursor: pointer;
+}
+
+.button {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    font-size: 13px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #0061D0;
+    transition: box-shadow 0.3s ease; /* Ajout d'une transition pour un effet plus fluide */
+}
+
+.button:hover {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    font-size: 13px;
+    background-color: transparent;
+    border: 1px solid #0061D0;
+    box-shadow: 0 0 10px 12px rgba(0, 97, 208, 0.5); /* Contour éclairci et adouci */
+    color: #fff;
+}
+
+
+.button1 {
+    border-radius: 5px;
+    height: 30px;
+    width: auto;
+    font-size: 13px;
+    background-color: whitesmoke;
+    border: 1px solid #fff;
+    color: #000;
+    transition: box-shadow 0.3s ease; /* Ajout d'une transition pour un effet plus fluide */
+}
+
+.button2 {
+    border-radius: 5px;
+    height: 30px;
+    width: auto;
+    font-size: 13px;
+    background-color: rgb(215, 147, 147);
+    border: 1px solid #3f3e3e;
+    color: #000;
+    transition: box-shadow 0.3s ease; /* Ajout d'une transition pour un effet plus fluide */
+}

@@ -1,0 +1,10 @@
+ {/* <span className="line"></span>
+        <span className="other-login-text">Or Signup with</span>
+        <div className="social-logins">
+          <button className="social-login">
+            <i style={{ color: "#1e7bf2" }} className="fa fa-brands fa-facebook-f"></i>
+          </button>
+          <button className="social-login">
+            <i style={{ color: "#1e7bf2" }} className="fa fa-brands fa-google"></i>
+          </button>
+        </div> */}

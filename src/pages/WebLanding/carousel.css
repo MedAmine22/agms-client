@@ -1,0 +1,48 @@
+.carousel {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .carousel__input {
+    display: none;
+  }
+  
+  .carousel__slides {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel__slide {
+    flex: 0 0 100%;
+    height: 300px; /* Définissez la hauteur souhaitée pour vos images */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .carousel__nav {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .carousel__indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .carousel__input:checked + .carousel__slides {
+    transform: translateX(-100%);
+  }
+  
+  .carousel__input#slide2:checked ~ .carousel__nav label:nth-child(2),
+  .carousel__input#slide3:checked ~ .carousel__nav label:nth-child(3) {
+    background-color: #333;
+  }
+  

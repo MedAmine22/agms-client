@@ -1,0 +1,36 @@
+.carousel-container {
+    position: relative; /* Position relative pour les flèches */
+  }
+  
+  .custom-left-arrow,
+  .custom-right-arrow {
+    background-color: #0061D0; /* Couleur orange pour les flèches */
+    color: white; /* Couleur du texte des flèches */
+    border: none; /* Supprimer les bordures */
+    border-radius: 50%; /* Rendre les flèches rondes */
+    width: 50px; /* Largeur des flèches */
+    height: 50px; /* Hauteur des flèches */
+    font-size: 40px; /* Taille de la police des flèches */
+    display: flex; /* Afficher les flèches en tant que blocs */
+    justify-content: center; /* Centrer horizontalement le contenu des flèches */
+    align-items: center; /* Centrer verticalement le contenu des flèches */
+    cursor: pointer; /* Définir un curseur de type pointer pour les flèches */
+    position: absolute; /* Position absolue pour les flèches */
+    top: 50%; /* Aligner les flèches verticalement au milieu */
+    transform: translateY(-50%); /* Déplacer les flèches verticalement de moitié de leur hauteur vers le haut */
+    transition: background-color 0.3s ease; /* Ajouter une transition pour un changement en douceur de la couleur de fond */
+  }
+  
+  .custom-left-arrow:hover,
+  .custom-right-arrow:hover {
+    background-color: #0061D0; /* Couleur orange plus foncée au survol */
+  }
+  
+  .custom-left-arrow {
+    left: 0; /* Aligner la flèche gauche à gauche */
+  }
+  
+  .custom-right-arrow {
+    right: 0; /* Aligner la flèche droite à droite */
+  }
+  
